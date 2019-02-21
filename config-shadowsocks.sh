@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage:
-# ./config-shadowsocks.sh <server_ip> <password_of_shadowsocks>
-# ./config-shadowsocks.sh 123.123.123.123 12345678
+# ./config-shadowsocks.sh <password_of_shadowsocks>
+# ./config-shadowsocks.sh 12345678
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install python-pip
