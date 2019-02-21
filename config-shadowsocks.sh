@@ -6,13 +6,14 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install python-pip
 pip install shadowsocks
+server_ip=$(ifconfig eth0|grep "inet "|awk '{print $2}')
 cat>/etc/shadowsocks.json<<EOF
 {
-	"server":"$1",
+	"server":"${server_ip}",
 	"server_port":8388,
 	"local_address":"127.0.0.1",
 	"local_port":1080,
-	"password":"$2",
+	"password":"$1",
 	"timeout":300,
 	"method":"aes-256-cfb",
 	"fast_open":false
